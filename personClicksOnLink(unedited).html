@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+    // Function to check if the URL contains a specific parameter
+        function checkURLParam(parameter) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.has(parameter);
+        }
+
+        // Get the value of a specific URL parameter
+        function getURLParam(parameter) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(parameter);
+        }
+
+        // Check if a specific parameter exists in the URL
+        var parameterExists = checkURLParam('ACN');
+
+        // Get the value of a specific parameter from the URL
+        var parameterValue = getURLParam('ACN');
+
+        // Display the result on the webpage
+        var resultContainer = document.getElementById('result');
+        if (parameterExists) {
+            resultContainer.textContent = parameterValue;
+        } 
+      
+    localStorage.setItem("clickCountACN", resultContainer);
+      
+    window.location.href = "https://www.linkToWebsite.com";
+  </script>
+</body>
+</html>
